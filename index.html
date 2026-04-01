@@ -79,15 +79,26 @@
         <p>Tem surpresa não, to liso</p>
         <p>Vai tlabaia vagabundo</p>
         <p>Toma sua cu</p>
-        <img src="https://i.pinimg.com/236x/f1/64/35/f164353578f978b175153b7ee16559b8.jpg" alt="Gato mostrando o dedo do meio" style="width: 300px;">
+        <img id="resposta-img" class="hidden" src="https://i.pinimg.com/236x/f1/64/35/f164353578f978b175153b7ee16559b8.jpg" alt="Gato mostrando o dedo do meio" style="width: 300px;">
     </div>
     <p>© 2026 LeoGibertoni</p>  
     <script>
-        document.getElementById('sim').addEventListener('click', showResposta);
-        document.getElementById('nao').addEventListener('click', showResposta);
+        document.getElementById('sim').addEventListener('click', () => showResposta(true));
+        document.getElementById('nao').addEventListener('click', () => showResposta(false));
         
-        function showResposta() {
-            document.getElementById('resposta').classList.remove('hidden');
+        function showResposta(isSim) {
+            const resposta = document.getElementById('resposta');
+            const respostaImg = document.getElementById('resposta-img');
+            const texto = resposta.querySelectorAll('p');
+
+            resposta.classList.remove('hidden');
+            respostaImg.classList.remove('hidden');
+
+            if (isSim) {
+                texto.forEach(p => p.classList.remove('hidden'));
+            } else {
+                texto.forEach(p => p.classList.add('hidden'));
+            }
         }
     </script>
 </body>
