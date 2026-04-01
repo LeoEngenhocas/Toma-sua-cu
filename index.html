@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Zoeira - Gato do Dedo</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradientShift 5s ease infinite;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        #nao {
+            background-color: #f44336;
+        }
+        #nao:hover {
+            background-color: #da190b;
+        }
+        img {
+            width: 80%;
+            height: auto;
+            border: 5px solid #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .hidden {
+            display: none;
+        }
+        #resposta p {
+            color: #fff;
+            font-size: 1.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você quer uma surpresa?</h1>
+    <div>
+        <button id="sim">Sim</button>
+        <button id="nao">Não</button>
+    </div>
+    <div id="resposta" class="hidden">
+        <p>Vai tlabaia vagabundo</p>
+        <p>Toma sua cu</p>
+        <img src="https://i.pinimg.com/236x/f1/64/35/f164353578f978b175153b7ee16559b8.jpg" alt="Gato mostrando o dedo do meio" style="width: 300px;">
+    </div>
+    <script>
+        document.getElementById('sim').addEventListener('click', showResposta);
+        document.getElementById('nao').addEventListener('click', showResposta);
+        
+        function showResposta() {
+            document.getElementById('resposta').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html></content>
+<parameter name="filePath">
